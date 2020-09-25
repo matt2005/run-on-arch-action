@@ -4,13 +4,13 @@
 
 [![](https://github.com/uraimo/run-on-arch-action/workflows/test/badge.svg)](https://github.com/uraimo/run-on-arch-action)
 
-A GitHub Action that executes commands on non-x86 CPU architecture (armv6, armv7, aarch64, s390x, ppc64le).
+A GitHub Action that executes commands on non-x86 CPU architecture (armv6, armv7, aarch64, s390x, ppc64le, i386, AMD64).
 
 ## Usage
 
 This action requires three input parameters:
 
-* `arch`: CPU architecture: `armv6`, `armv7`, `aarch64`, `s390x`, or `ppc64le`. See [Supported Platforms](#supported-platforms) for the full matrix.
+* `arch`: CPU architecture: `i386`, `amd641, `armv6`, `armv7`, `aarch64`, `s390x`, or `ppc64le`. See [Supported Platforms](#supported-platforms) for the full matrix.
 * `distro`: Linux distribution name: `ubuntu16.04`, `ubuntu18.04`, `ubuntu20.04`, `buster`, `stretch`, `jessie`, `fedora_latest`, or `alpine_latest`. See [Supported Platforms](#supported-platforms) for the full matrix.
 * `run`: Shell commands to execute in the container.
 
@@ -151,6 +151,8 @@ This table details the valid `arch`/`distro` combinations:
 
 | arch     | distro     |
 | -------- | ---------- |
+| i386    | jessie, stretch, buster, alpine_latest |
+| amd64    | jessie, stretch, buster, alpine_latest |
 | armv6    | jessie, stretch, buster, alpine_latest |
 | armv7    | jessie, stretch, buster, ubuntu16.04, ubuntu18.04, ubuntu20.04, alpine_latest |
 | aarch64  | stretch, buster, ubuntu16.04, ubuntu18.04, ubuntu20.04, fedora_latest, alpine_latest |
@@ -169,6 +171,8 @@ New distros and archs can be added simply by creating a Dockerfile named `Docker
 [Umberto Raimondi](https://github.com/uraimo)
 
 [Elijah Shaw-Rutschman](https://github.com/elijahr)
+
+[Matthew Hilton] (https://github.com/matt2005)
 
 ## License
 
